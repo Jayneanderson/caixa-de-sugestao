@@ -74,5 +74,5 @@ Aceita um café? Me mande uma mensagem.
 
 # 📜 Licença
 
-![Badge](https://img.shields.io/github/license/Jayneanderson/caixa-de-sugestao)
+![Badge](https://img.shields.io/badge/License-MIT-green)
 
