@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css"/>
+    <title>Caixa de sugestão</title>
+</head>
+<body>
+    <header>
+        <ul>
+            <li><a href="#">Caixa de Sugestões</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="/new">Deixar Sugestão</a></li>
+        </ul>
+    </header>
+    <section class="content">
+        <div class="banner">
+            <h1>STYLE3</h1>
+                <h3>Plataforma de contribuição</h3>
+        </div>
+
+        <div class="tabela">
+            <table th:each="l : ${list}">
+                <tbody>
+                    <tr>
+                        <th>Contribuições recentes</th>
+                    </tr>
+                    <tr>
+                        <td>Jayneanderson</td>
+                    </tr>
+                    <tr>
+                        <td class="contribuicao" th:text="${l.textSuggestion}">Contribuição</td>
+                    </tr>
+                    <tr>
+                        <td>03 de agosto de 2020</td>
+                        <!-- th:text="${#dates.format(sprint.releaseDate, 'dd-MMM-yyyy')} -->
+                    </tr>
+                </tbody>    
+            </table>
+        </div>
+
+    </section>
+</body>
+</html>
