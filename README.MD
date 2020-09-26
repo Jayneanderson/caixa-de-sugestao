@@ -11,7 +11,7 @@
 <p align="center">
  <a href="#objetivo">Objetivo</a> •
  <a href="#tecnologias">Tecnologias</a> • 
- <a href="#autor">Autor</a>
+ <a href="#autor">Autor</a> •
  <a href="#licença">Licença</a> • 
 </p>
 
@@ -74,5 +74,5 @@ Aceita um café? Me mande uma mensagem.
 
 # 📜 Licença
 
-![Badge](https://img.shields.io/github/license/Jayneanderson/caixa-de-sugestao)
+![Badge](https://img.shields.io/badge/Licen%C3%A7a-MIT-green)
 

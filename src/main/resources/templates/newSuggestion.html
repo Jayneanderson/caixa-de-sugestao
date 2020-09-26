@@ -20,15 +20,15 @@
             <h1>STYLE3</h1>
             <h3>Plataforma de contribuição</h3>
         </div>
-        <form method="post">
+        <form method="POST" th:action="@{/new}">
             <div class="form">
                 <div class="suggestion">
 	                <label for="name">Nome:</label>
-	                <input type="name" placeholder="Seu nome"/>
+	                <input type="text" id="name" th:field="${suggestion.contact.name}" placeholder="Seu nome"/>
 	                <label for="phone">Telefone:</label>
-	                <input type="text" placeholder="Telefone"/>
+	                <input type="text" id="number" th:field="${phone.number}"placeholder="Telefone"/>
 	                <label for="suggestion">Sugestão:</label>
-	                <textarea id="suggestion" name="textSuggestion" rows="6" cols="60"></textarea>
+	                <textarea id="textSuggestion" th:field="${suggestion.textSuggestion}" name="suggestion" rows="6" cols="60"></textarea>
 	                <input id="submit" type="submit" value="Submit"/>
             	</div>
         	</div>

@@ -29,6 +29,14 @@ public class Phone {
 	@JoinColumn(name = "contact_id")
 	private Contact contact;
 	
+	public Phone() {
+		
+	}
+	
+	public Phone(String number, Contact contact) {
+		
+	}
+	
 	public Contact getContact() {
 		return contact;
 	}
