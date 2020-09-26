@@ -1,4 +1,4 @@
-<h1 align="center">🗃️ Caixa de Sugestão</h1>
+<h1 align="center">🗃️ Caixa de Sugestões</h1>
 
 <h1 align="center">
     <a href="https://www.java.com/pt_BR/">☕ Java</a>
@@ -74,5 +74,9 @@ Aceita um café? Me mande uma mensagem.
 
 # 📜 Licença
 
+ HEAD
 ![Badge](https://img.shields.io/badge/Licen%C3%A7a-MIT-green)
+=======
+![Badge](https://img.shields.io/badge/License-MIT-green)
+ 576a09d2e43068a0e03d96de679d6ce3d0be4b9d
 
