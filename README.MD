@@ -1,4 +1,4 @@
-<h1 align="center">🗃️ Caixa de Sugestão</h1>
+<h1 align="center">🗃️ Caixa de Sugestões</h1>
 
 <h1 align="center">
     <a href="https://www.java.com/pt_BR/">☕ Java</a>
