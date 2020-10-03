@@ -24,12 +24,13 @@
             <div class="form">
                 <div class="suggestion">
 	                <label for="name">Nome:</label>
-	                <input type="text" id="name" th:field="${suggestion.contact.name}" placeholder="Seu nome"/>
+	                <input type="text" id="name" th:field="${contact.name}" placeholder="Seu nome"/>
 	                <label for="phone">Telefone:</label>
-	                <input type="text" id="number" th:field="${phone.number}"placeholder="Telefone"/>
+	           		<input type="text" th:field="${contact.phones}" placeholder="Telefone"/> 
 	                <label for="suggestion">Sugestão:</label>
-	                <textarea id="textSuggestion" th:field="${suggestion.textSuggestion}" name="suggestion" rows="6" cols="60"></textarea>
-	                <input id="submit" type="submit" value="Submit"/>
+	                <textarea id="textSuggestion" th:field="${contact.suggestion.textSuggestion}" name="suggestion" rows="6" cols="60"></textarea>
+	                
+	                <button type="submit">Enviar</button>
             	</div>
         	</div>
         </form>

@@ -10,18 +10,20 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
 
+@Table(name = "suggestion")
 @Entity
 public class Suggestion {
 	// suggestion, date,
 
 	// para o relacionamento name,contact
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
-	private long id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	
 	@NotBlank
 	@Lob
@@ -29,22 +31,30 @@ public class Suggestion {
 	
 	@Column(name = "created_date")
 	@Temporal(TemporalType.DATE)
-	private Date createdDate;
+	private Date creatDate = new Date();
 	
 	@OneToOne
 	@JoinColumn(name = "contact_id")
 	private Contact contact;
 	
+	public Suggestion() {
+		
+	}
+
 	public Contact getContact() {
 		return contact;
+	}
+	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public void setContact(Contact contact) {
 		this.contact = contact;
-	}
-
-	public Suggestion() {
-		
 	}
 
 	public String getTextSuggestion() {
@@ -55,12 +65,14 @@ public class Suggestion {
 		this.textSuggestion = textSuggestion;
 	}
 
-	public Date getCreatedData() {
-		return createdDate;
+	public Date getCreatDate() {
+		return creatDate;
 	}
-	
-	public void setCratedData() {
-		this.createdDate = new Date();
+
+	public void setCreatDate(Date creatDate) {
+		this.creatDate = creatDate;
 	}
+
+
 
 }

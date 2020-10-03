@@ -21,26 +21,42 @@ public class Contact {
 	
 	//para o relacionamento lista de telefones,
 	
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
-	private long id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	
 	@NotBlank
-	@Size(min = 2, max = 40, message = "O nome deve ter")
+	@Size(min = 2, max = 40, message = "O nome deve ter no mínimo duas letras")
 	private String name;
 	
 	@OneToMany(mappedBy = "contact", cascade = CascadeType.ALL)
 	private List<Phone> phones = new ArrayList<>();
 	
-	@OneToOne(mappedBy = "contact", cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToOne(mappedBy = "contact", cascade = CascadeType.ALL)
 	private Suggestion suggestion;
+
+//	modificando métodos de adicionar telefones
 	
-	public List<Phone> getPhones() {
+	public List<Phone> getPhones(){
 		return phones;
 	}
-
-	public void setPhones(List<Phone> phones) {
-		this.phones = phones;
+	
+	public void setPhones(List<String> phones) {
+		for(String number : phones) {
+			this.phones.add(new Phone(number, this));
+		}
+	}
+	
+	public void setAddPhone(String number) {
+		this.phones.add(new Phone(number, this));
+	}
+	
+	public Long getId() {
+		return id;
+	}
+	
+	public void seId(Long id) {
+		
 	}
 
 	public Suggestion getSuggestion() {
@@ -49,18 +65,6 @@ public class Contact {
 
 	public void setSuggestion(Suggestion suggestion) {
 		this.suggestion = suggestion;
-	}
-
-	public Contact() {
-		
-	}
-	
-	public long getId() {
-		return id;
-	}
-	
-	public void setId(long id) {
-		this.id = id;
 	}
 	
 	public String getName() {
