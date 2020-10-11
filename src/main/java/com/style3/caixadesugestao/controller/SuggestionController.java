@@ -32,7 +32,6 @@ public class SuggestionController {
 		
 		Contact contact = new Contact();
 		Suggestion suggestion = new Suggestion();
-		
 		contact.setSuggestion(suggestion);
 		
 		model.addObject("contact", contact);
@@ -42,10 +41,13 @@ public class SuggestionController {
 	
 	
 	@PostMapping("/new")
-	public String setSaveNewSuggestion(Contact contact) {
-		contactRepository.save(contact);
+	public String setSaveNewSuggestion(Contact contact, Suggestion suggestion) {
 		
-		return "redirect:/new";
+		suggestion = contact.getSuggestion();
+		suggestion.setContact(contact);
+		
+		contactRepository.save(contact);
+ 		return "redirect:/new";
 	}
 	
 }

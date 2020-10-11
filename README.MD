@@ -60,6 +60,9 @@ Para não esquecer, baixe uma IDE. Você pode escolher entre o [Spring Tool Suit
 - Biblioteca de template Thymealeaf
 - Connector MySQL
 
+### Dificuldades
+
+- Comunicação entre a view e o controller ao tentar salvar lista de telefones
 
 ### Jayneanderson Santos
 ---

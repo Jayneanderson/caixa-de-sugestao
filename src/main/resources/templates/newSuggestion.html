@@ -3,23 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/syleSuggestion.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
 
     <title>Sugestão</title>
 </head>
 <body>
-    <header>
-        <ul>
-            <li><a href="#">Caixa de Sugestões</a></li>
-            <li><a href="/">Home</a></li>
-            <li><a href="#">Deixar Sugestão</a></li>
-        </ul>
-    </header>
-    <section class="content">
-        <div class="banner">
-            <h1>STYLE3</h1>
-            <h3>Plataforma de contribuição</h3>
-        </div>
+    <header th:fragment="navbar" class="content">
+	<ul>
+		<li><a href="#">Caixa de Sugestões</a></li>
+		<li><a href="/">Home</a></li>
+		<li><a href="/new">Deixar Sugestão</a></li>
+	</ul>
+	</header>
+	<section class="content">
+		<div class="banner">
+			<img src="/img/icon_style_3.svg" alt="style3"/>
+			<!-- <h1>STYLE3</h1> -->
+			<h3>Plataforma de contribuição</h3>
+		</div>
         <form method="POST" th:action="@{/new}">
             <div class="form">
                 <div class="suggestion">
@@ -30,7 +31,7 @@
 	                <label for="suggestion">Sugestão:</label>
 	                <textarea id="textSuggestion" th:field="${contact.suggestion.textSuggestion}" name="suggestion" rows="6" cols="60"></textarea>
 	                
-	                <button type="submit">Enviar</button>
+	                <button id="button" type="submit">Enviar</button>
             	</div>
         	</div>
         </form>

@@ -7,39 +7,37 @@
 <title>Caixa de sugestão</title>
 </head>
 <body>
-	<header>
-		<ul>
-			<li><a href="#">Caixa de Sugestões</a></li>
-			<li><a href="#">Home</a></li>
-			<li><a href="/new">Deixar Sugestão</a></li>
-		</ul>
+	<!-- <div th:insert="fragments/navbar :: navbar"></div> -->
+	<header th:fragment="navbar" class="content">
+	<ul>
+		<li><a href="#">Caixa de Sugestões</a></li>
+		<li><a href="/">Home</a></li>
+		<li><a href="/new">Deixar Sugestão</a></li>
+	</ul>
 	</header>
 	<section class="content">
 		<div class="banner">
-			<h1>STYLE3</h1>
+			<img src="/img/icon_style_3.svg" alt="style3"/>
+			<!-- <h1>STYLE3</h1> -->
 			<h3>Plataforma de contribuição</h3>
 		</div>
 
 		<form action="/new" method="get">
-			<div class="tabela">
-				<h1>Contribuições Recentes</h1>
-				<table>
-					<tbody th:each="l : ${listSuggestion}">
-						<tr>
-							<th></th>
-						</tr>
-						<tr>
-							<td th:text="${l.contact}">Jayneanderson</td>
-						</tr>
-						<tr>
-							<td class="contribuicao" th:text="${l.textSuggestion}">Contribuição</td>
-						</tr>
-						<tr>
-							<td>03 de agosto de 2020</td>
-							<!-- th:text="${#dates.format(sprint.releaseDate, 'dd-MMM-yyyy')}" -->
-						</tr>
-					</tbody>
-				</table>
+			<h1 class="contribuitions">Contribuições Recentes</h1>
+			<div class="table">
+				<ul>
+					<li th:each="l : ${listSuggestion}">
+						<h3 id="name" th:text="${l.contact.name}">Name</h3>
+						<p id="textSuggestion" th:text="${l.textSuggestion}">text suggestion</p>
+						<p id="date" th:text="${#dates.format(l.creatDate, 'dd-MM-yyyy')}">Date</p>
+					
+					</li>
+				</ul>
+			<!-- 
+			ul th:each="l : ${listSuggestion}"
+			nome
+			text.suggestion
+			date -->
 			</div>
 		</form>
 
